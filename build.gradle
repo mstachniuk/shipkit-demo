@@ -13,6 +13,7 @@ apply plugin: "maven-publish"
 apply plugin: "org.shipkit.travis"
 apply plugin: "org.shipkit.github-pom-contributors"
 apply plugin: "org.shipkit.release-notes"
+apply plugin: "org.shipkit.compare-publications"
 
 group 'com.example'
 
@@ -45,6 +46,7 @@ publishing {
 
 tasks.updateReleaseNotes.publicationRepository = "https://github.com/mstachniuk/shipkit-demo/releases/tag/v"
 tasks.updateReleaseNotesOnGitHub.publicationRepository = "https://github.com/mstachniuk/shipkit-demo/releases/tag/v"
+tasks.downloadPreviousReleaseArtifacts.previousSourcesJarUrl = "customUrl" + tasks.fetchReleaseNotes.previousVersion
 
 
 allprojects {
