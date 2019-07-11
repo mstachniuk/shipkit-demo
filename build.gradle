@@ -9,7 +9,10 @@ buildscript {
 }
 
 apply plugin: "java"
-apply plugin: "org.shipkit.java"
+apply plugin: "maven-publish"
+apply plugin: "org.shipkit.travis"
+apply plugin: "org.shipkit.github-pom-contributors"
+apply plugin: "org.shipkit.release-notes"
 
 group 'com.example'
 
@@ -22,3 +25,22 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
+publishing {
+    publish {
+        doLast {
+            println('PUBLISHED ' + version + '!')
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username solUsername
+                password solPassword
+            }
+            url solUrl
+        }
+    }
+}
+
+//tasks.updateReleaseNotes.publicationRepository = "mstachniuk/shipkit-demo"
