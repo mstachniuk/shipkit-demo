@@ -43,4 +43,12 @@ publishing {
     }
 }
 
-//tasks.updateReleaseNotes.publicationRepository = "mstachniuk/shipkit-demo"
+tasks.updateReleaseNotes.publicationRepository = "mstachniuk/shipkit-demo"
+tasks.updateReleaseNotesOnGitHub.publicationRepository = "mstachniuk/shipkit-demo"
+
+
+allprojects {
+    plugins.withId("maven-publish") {
+        tasks.performRelease.dependsOn(tasks.publish)
+    }
+}
