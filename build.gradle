@@ -35,10 +35,10 @@ publishing {
     repositories {
         maven {
             credentials {
-                username solUsername
-                password solPassword
+                username System.getenv("solUsername")
+                password System.getenv("solPassword")
             }
-            url solUrl
+            url System.getenv("solUrl")
         }
     }
 }
