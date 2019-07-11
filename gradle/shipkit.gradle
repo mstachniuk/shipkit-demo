@@ -6,7 +6,7 @@
 //
 shipkit {
     //TODO is the repository correct?
-    gitHub.repository = "unspecified-user/unspecified-repo"
+    gitHub.repository = "mstachniuk/shipkit-demo"
 
     //TODO generate and use your own read-only GitHub personal access token
     //More: https://github.com/mockito/shipkit/blob/master/docs/getting-started.md#production-configuration
