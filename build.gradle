@@ -43,8 +43,8 @@ publishing {
     }
 }
 
-tasks.updateReleaseNotes.publicationRepository = "mstachniuk/shipkit-demo"
-tasks.updateReleaseNotesOnGitHub.publicationRepository = "mstachniuk/shipkit-demo"
+tasks.updateReleaseNotes.publicationRepository = "https://github.com/mstachniuk/shipkit-demo/releases/tag/v"
+tasks.updateReleaseNotesOnGitHub.publicationRepository = "https://github.com/mstachniuk/shipkit-demo/releases/tag/v"
 
 
 allprojects {
